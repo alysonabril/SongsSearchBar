@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="omJ-6d-cYI">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Songs Table View Controller-->
+        <scene sceneID="DSX-fQ-0Lr">
+            <objects>
+                <tableViewController id="mWr-mR-rFM" customClass="SongsTableViewController" customModule="SongsTableViewSearchBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="V7k-Nt-z9s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="PNg-QY-3jc">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.97038036584854126" green="0.81746405363082886" blue="0.69801664352416992" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="barTintColor" red="0.1732313623" green="0.1044662911" blue="0.40113420049999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Song</string>
+                                <string>Artist</string>
+                            </scopeButtonTitles>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" textLabel="ghW-2L-aDy" detailTextLabel="T7b-Hu-DQY" rowHeight="170" style="IBUITableViewCellStyleSubtitle" id="k5V-Ho-BjY">
+                                <rect key="frame" x="0.0" y="84" width="414" height="170"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k5V-Ho-BjY" id="EMY-fc-ani">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="169.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ghW-2L-aDy">
+                                            <rect key="frame" x="20" y="51.5" width="32" height="32"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T7b-Hu-DQY">
+                                            <rect key="frame" x="20" y="87" width="47" height="27.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.10588235294117647" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <segue destination="uW5-iX-VBq" kind="show" id="Y0G-hL-wve"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mWr-mR-rFM" id="ghQ-at-jM5"/>
+                            <outlet property="delegate" destination="mWr-mR-rFM" id="Bag-XK-P8r"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ih6-JQ-BZG"/>
+                    <connections>
+                        <outlet property="songSearchBar" destination="PNg-QY-3jc" id="o8G-Xz-7Vt"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6U-bU-dhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857.97101449275374" y="3.3482142857142856"/>
+        </scene>
+        <!--Song View Controller-->
+        <scene sceneID="zC2-6U-30p">
+            <objects>
+                <viewController id="uW5-iX-VBq" customClass="SongViewController" customModule="SongsTableViewSearchBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Ty-3f-EGk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loveSong" translatesAutoresizingMaskIntoConstraints="NO" id="xLM-sm-t6A">
+                                <rect key="frame" x="20" y="115" width="374" height="369"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="369" id="iBZ-c3-Q1k"/>
+                                    <constraint firstAttribute="width" constant="374" id="ySI-Ul-a2Z"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="songTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSw-bM-xH0">
+                                <rect key="frame" x="20" y="482" width="374" height="59"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
+                                <color key="textColor" red="0.38776817917823792" green="0.72270059585571289" blue="0.63528740406036377" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="artistName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Es-ZC-HEe">
+                                <rect key="frame" x="20" y="549" width="374" height="59"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
+                                <color key="textColor" red="0.94743806123733521" green="0.77283084392547607" blue="0.76077884435653687" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1732313622741149" green="0.10446629113987096" blue="0.40113420050761417" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="0Es-ZC-HEe" firstAttribute="top" secondItem="nSw-bM-xH0" secondAttribute="bottom" constant="8" id="4fz-Fe-NbE"/>
+                            <constraint firstItem="0Es-ZC-HEe" firstAttribute="leading" secondItem="cDr-tZ-V7c" secondAttribute="leading" constant="20" id="All-oF-8FM"/>
+                            <constraint firstItem="cDr-tZ-V7c" firstAttribute="trailing" secondItem="0Es-ZC-HEe" secondAttribute="trailing" constant="20" id="Of6-XG-8k5"/>
+                            <constraint firstItem="nSw-bM-xH0" firstAttribute="top" secondItem="xLM-sm-t6A" secondAttribute="bottom" constant="-2" id="RWt-ue-358"/>
+                            <constraint firstItem="nSw-bM-xH0" firstAttribute="leading" secondItem="cDr-tZ-V7c" secondAttribute="leading" constant="20" id="SLF-nR-Ang"/>
+                            <constraint firstItem="cDr-tZ-V7c" firstAttribute="bottom" secondItem="0Es-ZC-HEe" secondAttribute="bottom" constant="254" id="VJv-jl-4Zq"/>
+                            <constraint firstItem="xLM-sm-t6A" firstAttribute="top" secondItem="cDr-tZ-V7c" secondAttribute="top" constant="27" id="YWM-Qk-EA3"/>
+                            <constraint firstItem="xLM-sm-t6A" firstAttribute="width" secondItem="nSw-bM-xH0" secondAttribute="width" id="cjD-bC-MLU"/>
+                            <constraint firstItem="0Es-ZC-HEe" firstAttribute="width" secondItem="nSw-bM-xH0" secondAttribute="width" id="frx-Nl-fEa"/>
+                            <constraint firstItem="xLM-sm-t6A" firstAttribute="leading" secondItem="cDr-tZ-V7c" secondAttribute="leading" constant="20" id="hgz-iN-Wf8"/>
+                            <constraint firstItem="cDr-tZ-V7c" firstAttribute="trailing" secondItem="nSw-bM-xH0" secondAttribute="trailing" constant="20" id="nqI-E8-Jdq"/>
+                            <constraint firstItem="0Es-ZC-HEe" firstAttribute="height" secondItem="nSw-bM-xH0" secondAttribute="height" id="pVb-y8-tvQ"/>
+                            <constraint firstItem="cDr-tZ-V7c" firstAttribute="trailing" secondItem="xLM-sm-t6A" secondAttribute="trailing" constant="20" id="pxi-EJ-lY6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cDr-tZ-V7c"/>
+                    </view>
+                    <connections>
+                        <outlet property="artistNameLabel" destination="0Es-ZC-HEe" id="0j7-JX-v2U"/>
+                        <outlet property="songTitleLabel" destination="nSw-bM-xH0" id="NhV-hg-SlB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hw9-Zm-FeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1721.7391304347827" y="19.419642857142858"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lp4-Wv-vbZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="omJ-6d-cYI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EST-HR-Nnz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mWr-mR-rFM" kind="relationship" relationship="rootViewController" id="WKN-AY-Cz5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFx-9K-Sfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52.173913043478265" y="3.3482142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loveSong" width="400" height="250"/>
+    </resources>
+</document>

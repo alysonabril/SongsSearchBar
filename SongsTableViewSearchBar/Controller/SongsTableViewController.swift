@@ -59,18 +59,30 @@ class SongsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return songSearchResult.count
+        
+        return songSearchResult.count == 0 ?  1 : songSearchResult.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let song = songSearchResult[indexPath.row]
+        let purple = UIColor(red: 44/255, green: 27/255, blue: 102/255, alpha: 1)
+        let pink = UIColor(red: 242/255, green: 197/255, blue: 194/255, alpha: 1)
         
+        if songSearchResult.count == 0 {
+            let  cell = UITableViewCell()
+            cell.backgroundColor = purple
+            cell.textLabel?.textColor = pink
+            cell.textLabel?.text = "Result Not Found"
+            return cell
+        }
+        
+        
+        let song = songSearchResult[indexPath.row]
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath)
         cell.textLabel?.textColor = UIColor(red: 99/255, green: 184/255, blue: 162/255, alpha: 1)
         cell.textLabel?.text = song.name
-        cell.detailTextLabel?.textColor = UIColor(red: 242/255, green: 197/255, blue: 194/255, alpha: 1)
+        cell.detailTextLabel?.textColor = pink
         cell.detailTextLabel?.text = song.artist
         
         return cell
@@ -92,7 +104,11 @@ class SongsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if songSearchResult.count == 0 {
+            return 250
+        } else {
         return 160
+        }
     }
     
 }
@@ -100,5 +116,10 @@ class SongsTableViewController: UITableViewController {
 extension SongsTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchString = searchBar.text
+        
+        if songSearchResult.count == 0 {
+            searchBar.resignFirstResponder()
+        }
+        
     }
 }
